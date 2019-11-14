@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>heroIcon</name>
+        <script><![CDATA[function() {
+  return {
+    template: '<span><i class="glyphicon glyphicon-user"></i></span>',
+    restrict: 'E',
+    link: function(scope, element) {
+    }
+  }
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-11-13 08:09:48</sys_created_on>
+        <sys_id>451bb8d61b0140109963dd3cdc4bcbe0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>heroIcon</sys_name>
+        <sys_package display_value="Training Portal" source="x_302609_training">8393c6101b0100109963dd3cdc4bcb8e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Training Portal">8393c6101b0100109963dd3cdc4bcb8e</sys_scope>
+        <sys_update_name>sp_angular_provider_451bb8d61b0140109963dd3cdc4bcbe0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-11-13 08:13:40</sys_updated_on>
+        <type>directive</type>
+    </sp_angular_provider>
+</record_update>

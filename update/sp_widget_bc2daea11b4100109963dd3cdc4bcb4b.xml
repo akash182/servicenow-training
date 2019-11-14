@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function() {
+        <client_script><![CDATA[function($scope) {
   /* widget controller */
   var c = this;
-	c.name = "Thanos";
-	c.firstName = "Gamora";
-	c.checkName = function(){
-		alert(c.name);
+	//Avenger assemble
+	c.name="Akash";
+	$scope.count=0;
+	c.numberOfincidents = 10;
+	c.className = "btn btn-primary";
+	c.url="https://www.w3schools.com/";
+	c.increment = function(){
+		alert("You shall not pass!")
 	}
-}]]></client_script>
+}
+
+
+
+
+
+/*
+ <ul class="list-group">
+		<li class="list-group-item">Cras justo odio</li>
+		<li class="list-group-item">Dapibus ac facilisis in</li>
+		<li class="list-group-item">Morbi leo risus</li>
+		<li class="list-group-item">Porta ac consectetur ac</li>
+		<li class="list-group-item">Vestibulum at eros</li>
+ </ul>
+
+//ng-repeat
+<ul class="list-group">
+		<li class="list-group-item" ng-repeat="hero in c.avengers">{{hero}}</li>
+ </ul>
+
+//Using ng-bind
+<li class="list-group-item" ng-repeat="hero in c.avengers" ng-bind="hero"></li>
+
+//Using directive
+<ul class="list-group">
+	<li class="list-group-item" ng-repeat="hero in c.avengers"><hero-icon></hero-icon>{{hero}}</li>
+</ul>	
+*/]]></client_script>
         <controller_as>c</controller_as>
         <css/>
         <data_table>sp_instance</data_table>
@@ -31,41 +62,25 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-11-11 08:28:34</sys_created_on>
         <sys_id>bc2daea11b4100109963dd3cdc4bcb4b</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>70</sys_mod_count>
         <sys_name>Home Widget</sys_name>
         <sys_package display_value="Training Portal" source="x_302609_training">8393c6101b0100109963dd3cdc4bcb8e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Training Portal">8393c6101b0100109963dd3cdc4bcb8e</sys_scope>
         <sys_update_name>sp_widget_bc2daea11b4100109963dd3cdc4bcb4b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-11-11 09:03:53</sys_updated_on>
+        <sys_updated_on>2019-11-14 09:16:05</sys_updated_on>
         <template><![CDATA[<div>
 <!-- your widget template -->
- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <p>
-              One way Data Binding Example
-            </p>
-            <p>Name: <input type="text" value="{{c.name}}"></p>
-            <p>
-              You wrote : <span ng-bind="c.name"></span><!-- {{c.name}}-->
-            </p>
-            <button ng-click="c.checkName()">
-              Check Name
-            </button>
-  </div> 
-  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <p>
-          Two way Data Binding Example
-        </p>
-        <p>Input something in the input box:</p>  
-        <p>Name: <input type="text" ng-model="c.firstName"></p>  
-        <p>You wrote: {{::c.firstName }}</p> 
-        <p>You wrote: {{ c.firstName }}</p>  
-  </div> 
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-        <p>
-          Expression <span ng-bind="c.name + '     ' + c.firstName"></span>
-        </p>
+ <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12 col-lg-offset-2 col-md-offset-2" ng-init="c.avengers = ['Captain America','Thor','Iron Man','Star Lord','Spider Man','Ant Man'];">
+  <ul class="list-group">
+	<li class="list-group-item" ng-repeat="hero in c.avengers">
+    <hero-icon></hero-icon>{{count}}</li>
+  </ul>	
+
+  </div>
+  <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12 col-lg-offset-2 col-md-offset-2">
+  <span ng-class="{ true : 'btn btn-primary', false : 'btn btn-danger' }[c.numberOfincidents]"></span>
   </div>
 </div>]]></template>
     </sp_widget>
